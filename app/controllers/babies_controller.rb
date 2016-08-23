@@ -25,10 +25,11 @@ class BabiesController < ApplicationController
   # POST /babies.json
   def create
     @baby = current_parent.babies.new(baby_params)
+    @baby.parents << current_parent
 
     respond_to do |format|
       if @baby.save
-        format.html { redirect_to @baby, notice: 'Baby was successfully created.' }
+        format.html { redirect_to babies_path, notice: 'Baby was successfully created.' }
         format.json { render :show, status: :created, location: @baby }
       else
         format.html { render :new }

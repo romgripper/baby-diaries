@@ -8,6 +8,7 @@
 
 Parent.destroy_all
 ParentProfile.destroy_all
+Baby.destroy_all
 
 Parent.create! [
 	{ username: "bingo", password: "xingbin" },
