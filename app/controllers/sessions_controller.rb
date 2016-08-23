@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+
+  skip_before_action :ensure_login, only: [ :new, :create ]
   def new
   end
 
@@ -15,6 +17,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    reset_session
+    redirect_to login_path, notice: "You have been logged out"
   end
 
   private
