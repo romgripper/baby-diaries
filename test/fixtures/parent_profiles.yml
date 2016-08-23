@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  birthday: 2016-08-23
+  gender: MyString
+  parent: one
+
+two:
+  birthday: 2016-08-23
+  gender: MyString
+  parent: two
