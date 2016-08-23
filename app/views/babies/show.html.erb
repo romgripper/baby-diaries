@@ -1,0 +1,27 @@
+<p>
+  <strong>Name:</strong>
+  <%= @baby.name %>
+</p>
+
+<p>
+  <strong>Nick:</strong>
+  <%= @baby.nick %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @baby.birthday %>
+</p>
+
+<p>
+  <strong>Birth height:</strong>
+  <%= @baby.birth_height %> cm
+</p>
+
+<p>
+  <strong>Birth weight:</strong>
+  <%= @baby.birth_weight %> g
+</p>
+
+<%= link_to 'Edit', edit_baby_path(@baby) %> |
+<%= link_to 'Back', babies_path %>

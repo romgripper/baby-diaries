@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nick: MyString
+  birthday: 2016-08-23
+  birth_height: 1
+  birth_weight: 1
+  parent: one
+
+two:
+  name: MyString
+  nick: MyString
+  birthday: 2016-08-23
+  birth_height: 1
+  birth_weight: 1
+  parent: two
