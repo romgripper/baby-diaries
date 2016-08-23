@@ -1,6 +1,6 @@
 <h1>Babies</h1>
 
-<table>
+<table id="babies">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,8 +18,8 @@
         <td><%= baby.name %></td>
         <td><%= baby.nick %></td>
         <td><%= baby.birthday %></td>
-        <td><%= baby.birth_height %> g</td>
-        <td><%= baby.birth_weight %> cm</td>
+        <td><%= baby.birth_height %> cm</td>
+        <td><%= baby.birth_weight %> g</td>
         <td><%= link_to 'Show', baby %></td>
         <td><%= link_to 'Edit', edit_baby_path(baby) %></td>
         <td><%= link_to 'Delete', baby, method: :delete, data: { confirm: 'Are you sure?' } %></td>

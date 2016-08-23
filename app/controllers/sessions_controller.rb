@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
   	if parent && parent.authenticate(password)
   		session[:parent_id] = parent.id
-  		redirect_to parent.parent_profile, notice: "Logged in successfully"
+  		redirect_to babies_path, notice: "Logged in successfully"
   	else
   		redirect_to login_path, alert: "Invalid username or password"
   	end
