@@ -9,6 +9,12 @@
   </head>
 
   <body>
+  	<% if logged_in? %>
+  		<div style='float: right;'>
+  			Welcome <%= link_to current_parent.parent_profile.name, current_parent.parent_profile %> |
+  			<%= link_to "Logout", logout_path, method: :delete %>
+  		</div>
+  	<% end %>
   	<% flash.each do |key, value| %>
   		<p id='<%= key %>'><%= value %></p>
   	<% end %>
