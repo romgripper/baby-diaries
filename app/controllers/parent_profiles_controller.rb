@@ -1,4 +1,5 @@
 class ParentProfilesController < ApplicationController
+
   before_action :set_parent_profile, only: [:show, :edit, :update] #, :destroy]
 
   # GET /parent_profiles

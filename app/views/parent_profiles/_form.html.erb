@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
+  <p class="field">
+    <strong><%= f.label :name %>:</strong>
     <%= f.text_field :name %>
-  </div>
+  </p>
 
-  <div class="field">
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
-  </div>
+  <p class="field">
+    <strong><%= f.label :gender %>:</strong>
+    <%= f.select :gender, ParentProfile::GENDERS %>
+  </p>
 
-    <div class="field">
-    <%= f.label :birthday %>
+  <p class="field">
+    <strong><%= f.label :birthday %>:</strong>
     <%= f.date_field :birthday %>
-  </div>
+  </p>
 
-  <div class="actions">
+  <p class="actions">
     <%= f.submit "Update" %>
-  </div>
+  </p>
 <% end %>
