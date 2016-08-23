@@ -13,3 +13,9 @@ Parent.create! [
 	{ username: "bingo", password: "xingbin" },
 	{ username: "melody", password: "dcy" }
 ]
+
+p = Parent.find_by username: "bingo"
+p.create_parent_profile! name: "Xing Bin", gender: "male", birthday: Date.new(1982,11,1)
+
+p = Parent.find_by username: "melody"
+p.create_parent_profile! name: "Deng Chunyan", gender: "female", birthday: Date.new(1984,3,18)

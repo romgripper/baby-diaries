@@ -1,0 +1,27 @@
+<h1>Parent Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Show</th>
+      <th>Edit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parent_profiles.each do |parent_profile| %>
+      <tr>
+        <td><%= parent_profile.show %></td>
+        <td><%= parent_profile.edit %></td>
+        <td><%= link_to 'Show', parent_profile %></td>
+        <td><%= link_to 'Edit', edit_parent_profile_path(parent_profile) %></td>
+        <td><%= link_to 'Destroy', parent_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parent Profile', new_parent_profile_path %>

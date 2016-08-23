@@ -1,0 +1,1 @@
+json.partial! "parent_profiles/parent_profile", parent_profile: @parent_profile
