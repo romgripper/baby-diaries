@@ -11,6 +11,12 @@ class BabiesController < ApplicationController
   # GET /babies/1.json
   def show
     # session[:baby_id] = @baby.id
+    last_record = @baby.records.order(date: :desc).first
+    if last_record
+      @new_record = last_record.dup
+    else
+      @new_record = @baby.records.new(date: Date.today)
+    end
   end
 
   # GET /babies/new

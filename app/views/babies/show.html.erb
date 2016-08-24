@@ -44,18 +44,18 @@
 
 <section>
   <h1>New Diary</h1>
-  <%= form_for([@baby, @baby.records.new]) do |f| %>
+  <%= form_for([@baby, @new_record]) do |f| %>
     <p class="field">
       <strong><%= f.label :date %>:</strong>
       <%= f.date_field :date %>
     </p>
     <p class="field">
       <strong><%= f.label :weight %>:</strong>
-      <%= f.text_field :weight %>
+      <%= f.number_field :weight %> g
     </p>
     <p class="field">
       <strong><%= f.label :height %>:</strong>
-      <%= f.text_field :height %>
+      <%= f.number_field :height %> cm
     </p>
     <p class="field">
       <strong><%= f.label :first_time %>:</strong>
@@ -63,7 +63,7 @@
     </p>
     <p class="field">
       <strong><%= f.label :note %>:</strong>
-      <%= f.text_field :note %>
+      <%= f.text_area :note %>
     </p>
     <div class="actions">
       <%= f.submit "Add New Diary" %>
