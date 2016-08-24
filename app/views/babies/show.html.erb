@@ -1,27 +1,72 @@
-<p>
-  <strong>Name:</strong>
-  <%= @baby.name %>
-</p>
+<section id="baby_profile_section">
+  <h1>Baby Profile</h1>
 
-<p>
-  <strong>Nick:</strong>
-  <%= @baby.nick %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @baby.name %>
+  </p>
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @baby.birthday %>
-</p>
+  <p>
+    <strong>Nick:</strong>
+    <%= @baby.nick %>
+  </p>
 
-<p>
-  <strong>Birth height:</strong>
-  <%= @baby.birth_height %> cm
-</p>
+  <p>
+    <strong>Birthday:</strong>
+    <%= @baby.birthday %>
+  </p>
 
-<p>
-  <strong>Birth weight:</strong>
-  <%= @baby.birth_weight %> g
-</p>
+  <p>
+    <strong>Birth height:</strong>
+    <%= @baby.birth_height %> cm
+  </p>
 
-<%= link_to 'Edit', edit_baby_path(@baby) %> |
-<%= link_to 'Back', babies_path %>
+  <p>
+    <strong>Birth weight:</strong>
+    <%= @baby.birth_weight %> g
+  </p>
+
+  <%= link_to 'Edit Profile', edit_baby_path(@baby) %> |
+  <%= link_to 'Back', babies_path %> 
+</section>
+
+<!-- <hr> -->
+
+<section id="diaries_section">
+  <h1>Baby Diaries</h1>
+
+  <div id="records">
+    <%= render @baby.records %>
+  </div>
+</section>
+
+<!-- <hr> -->
+
+<section>
+  <h1>New Diary</h1>
+  <%= form_for([@baby, @baby.records.new]) do |f| %>
+    <p class="field">
+      <strong><%= f.label :date %>:</strong>
+      <%= f.date_field :date %>
+    </p>
+    <p class="field">
+      <strong><%= f.label :weight %>:</strong>
+      <%= f.text_field :weight %>
+    </p>
+    <p class="field">
+      <strong><%= f.label :height %>:</strong>
+      <%= f.text_field :height %>
+    </p>
+    <p class="field">
+      <strong><%= f.label :first_time %>:</strong>
+      <%= f.text_field :first_time %>
+    </p>
+    <p class="field">
+      <strong><%= f.label :note %>:</strong>
+      <%= f.text_field :note %>
+    </p>
+    <div class="actions">
+      <%= f.submit "Add New Diary" %>
+    </div>
+  <% end %>
+</section>

@@ -10,11 +10,12 @@ class BabiesController < ApplicationController
   # GET /babies/1
   # GET /babies/1.json
   def show
+    # session[:baby_id] = @baby.id
   end
 
   # GET /babies/new
   def new
-    @baby = current_parent.babies.new
+    @baby = Baby.new
   end
 
   # GET /babies/1/edit
@@ -24,12 +25,13 @@ class BabiesController < ApplicationController
   # POST /babies
   # POST /babies.json
   def create
-    @baby = current_parent.babies.new(baby_params)
-    @baby.parents << current_parent
+    @baby = Baby.new(baby_params)
+    #@baby.parents << current_parent
 
     respond_to do |format|
       if @baby.save
-        format.html { redirect_to babies_path, notice: 'Baby was successfully created.' }
+        current_parent.babies << @baby
+        format.html { redirect_to babies_path, notice: 'Baby profile successfully created.' }
         format.json { render :show, status: :created, location: @baby }
       else
         format.html { render :new }
@@ -43,7 +45,7 @@ class BabiesController < ApplicationController
   def update
     respond_to do |format|
       if @baby.update(baby_params)
-        format.html { redirect_to @baby, notice: 'Baby was successfully updated.' }
+        format.html { redirect_to @baby, notice: 'Baby profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @baby }
       else
         format.html { render :edit }
@@ -57,7 +59,7 @@ class BabiesController < ApplicationController
   def destroy
     @baby.destroy
     respond_to do |format|
-      format.html { redirect_to babies_url, notice: 'Baby was successfully destroyed.' }
+      format.html { redirect_to babies_url, notice: 'Baby profile was successfully removed.' }
       format.json { head :no_content }
     end
   end

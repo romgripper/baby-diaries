@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-08-24
+  weight: 1
+  height: 1
+  first_time: MyString
+
+two:
+  date: 2016-08-24
+  weight: 1
+  height: 1
+  first_time: MyString

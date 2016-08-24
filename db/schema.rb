@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160823152044) do
+ActiveRecord::Schema.define(version: 20160824135308) do
 
   create_table "babies", force: :cascade do |t|
     t.string   "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160823152044) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "babies_parents", force: :cascade do |t|
+  create_table "babies_parents", id: false, force: :cascade do |t|
     t.integer "parent_id"
     t.integer "baby_id"
     t.index ["baby_id"], name: "index_babies_parents_on_baby_id"
@@ -44,6 +44,18 @@ ActiveRecord::Schema.define(version: 20160823152044) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "weight"
+    t.integer  "height"
+    t.string   "first_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "baby_id"
+    t.text     "note"
+    t.index ["baby_id"], name: "index_records_on_baby_id"
   end
 
 end

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :records
   root to: "babies#index"
-  resources :babies
+  resources :babies do
+    resources :records, only: [ :create, :destroy, :edit ]
+  end
   # get 'sessions/new'
 
   # get 'sessions/create'
