@@ -20,7 +20,7 @@ class RecordsController < ApplicationController
     if @record.save
       redirect_to @baby, notice: 'Record was successfully created.'
     else
-      redirect_to @baby, notice: 'Unable to add record!'
+      redirect_to @baby, alert: 'Unable to add record!'
     end
   end
 
