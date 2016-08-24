@@ -4,4 +4,5 @@ class Parent < ApplicationRecord
 	has_and_belongs_to_many :babies
 
 	validates :username, :password, presence: true
+	validates :username, uniqueness: true
 end
