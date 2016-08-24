@@ -17,6 +17,7 @@ class BabiesController < ApplicationController
     else
       @new_record = @baby.records.new(date: Date.today)
     end
+    @new_record.first_time = nil
   end
 
   # GET /babies/new

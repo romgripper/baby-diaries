@@ -1,6 +1,14 @@
-<div class="record">
+<article class="diary">
+	<head>
+		<%= content_tag :span, "#{record.date}", class: "diary_title" %>
+		<%= link_to "Delete", [@baby, record], method: :delete %>
+	</head>
 	<div>
-
-	</div>
-	<div><%= simple_format record.note %></div>
-</div>
+		<%= content_tag :span, "Height: #{record.height}cm,", class: "height_text" if record.height %>
+		<%= content_tag :span, "Weight: #{record.weight}g", class: "weight_text" if record.weight %>
+	<div>
+	<div>
+		<%= content_tag :span, "#{record.first_time.capitalize} for the first time", class: "first_time_text" if record.first_time != "" %>
+	<div>
+	<div><%= simple_format record.note, { class: "note_text" }, wrapper_tag: "span" %></div>
+</article>
