@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "babies#index"
   resources :babies do
     resources :records, only: [ :create, :destroy, :edit ]
+    resources :parents, only: [ :new, :create ]
   end
   # get 'sessions/new'
 
