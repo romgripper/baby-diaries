@@ -13,5 +13,7 @@
   <%= @parent_profile.birthday %>
 </p>
 
-<%= link_to 'Edit', edit_parent_profile_path(@parent_profile) %> |
+<% if current_parent.id == @parent_profile.parent.id %>
+	<%= link_to 'Edit', edit_parent_profile_path(@parent_profile) %> |
+<% end %>
 <%= link_to 'Babies', babies_path %>

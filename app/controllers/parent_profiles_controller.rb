@@ -20,6 +20,9 @@ class ParentProfilesController < ApplicationController
 
   # GET /parent_profiles/1/edit
   def edit
+    if current_parent.id != @parent_profile.id
+      redirect_to @parent_profile, alert: 'You can only edit the profile of yourself.'
+    end
   end
 
   # POST /parent_profiles
@@ -41,6 +44,9 @@ class ParentProfilesController < ApplicationController
   # PATCH/PUT /parent_profiles/1
   # PATCH/PUT /parent_profiles/1.json
   def update
+    if current_parent.id != @parent_profile.id
+      redirect_to @parent_profile, alert: 'You can only update the profile of yourself.'
+    end
     respond_to do |format|
       if @parent_profile.update(parent_profile_params)
         format.html { redirect_to @parent_profile, notice: 'Parent profile was successfully updated.' }
