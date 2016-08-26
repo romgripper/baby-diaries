@@ -43,7 +43,7 @@
 
   <%= link_to 'Edit Profile', edit_baby_path(@baby) %>
   <% if not has_father %>
-    | <%= link_to 'Add Father', new_baby_parent_path(@baby) %> 
+    | <%= link_to 'Add Father', find_parent_for_baby_path(@baby) %> 
   <% end %>
   <% if not has_mother %>
     | <%= link_to 'Add Mother', find_parent_for_baby_path(@baby) %> 
