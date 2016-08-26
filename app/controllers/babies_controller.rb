@@ -15,7 +15,7 @@ class BabiesController < ApplicationController
     if last_record
       @new_record = last_record.dup
     else
-      @new_record = @baby.records.new(date: Date.today)
+      @new_record = Record.new(date: Date.today)
     end
     @new_record.first_time = nil
   end

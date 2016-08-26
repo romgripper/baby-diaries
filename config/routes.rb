@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root to: "babies#index"
   resources :babies do
     resources :records, only: [ :create, :destroy, :edit ]
-    resources :parents, only: [ :new, :create ]
+    # resources :parents, collection: { add_to_baby: :post}
   end
+
+  get "babies/:baby_id/parents/find" => "parents#find", as: "find_parent_for_baby"
+  post "babies/:baby_id/parents" => "parents#add_for_baby", as: "add_parent_for_baby"
   # get 'sessions/new'
 
   # get 'sessions/create'

@@ -1,5 +1,5 @@
 <h1>Add Parent</h1>
-<%= form_for([@baby, @parent]) do |f| %>
+<%= form_for(@parent, url: add_parent_for_baby_path) do |f| %>
 	<div class="field"><%= f.label :username,"User name" %> <br> <%= f.text_field :username %></div>
 	<p></p>
 	<div class="field"><%= f.label :password %> <br> <%= f.password_field :password %></div>
