@@ -1,10 +1,12 @@
 class ParentsController < ApplicationController
 	before_action :set_baby, only: [ :find, :add_for_baby ]
 
+  # GET /babies/:baby_id/parents/find
   def find
   	@parent = Parent.new
   end
 
+  # POST /babies/:baby_id/parents
   def add_for_baby
   	if @baby.parents.count >= 2
   		redirect_to babies_path, alert: "A baby can only have no more than two parents"
